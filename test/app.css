@@ -1,0 +1,92 @@
+@font-face {
+    font-family: "designhouseBold";
+    src: url("./assets/designhouseBold.ttf");
+  }
+  @font-face {
+    font-family: "designhouseLight";
+    src: url("./assets/designhouseLight.ttf");
+  }
+  
+  @import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Nanum+Myeongjo&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+  
+  .App {
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .App-logo {
+    height: auto;
+    width: 100%;
+    pointer-events: none;
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+      animation: App-logo-float infinite 3s ease-in-out;
+    }
+  }
+  
+  .App-header {
+    font-family: "designhouseBold";
+    background-color: rgba(36, 52, 86);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    min-height: 1px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-y: scroll;
+    flex-wrap: nowrap;
+  }
+  
+  .App-body {
+    background-color: rgba(46, 62, 96, 0.5);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: calc(10px + 2vmin);
+    color: palevioletred;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    min-height: 1px;
+    width: 100%;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-y: scroll;
+    flex-wrap: nowrap;
+  }
+  
+  .App-link {
+    color: rgb(112, 76, 182);
+  }
+  
+  @keyframes App-logo-float {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(10px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+  *{
+    -ms-overflow-style: none;
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
