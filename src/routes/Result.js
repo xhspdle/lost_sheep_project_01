@@ -10,8 +10,9 @@ class Result extends React.Component {
     }
     render() {
         const { location } = this.props;
+        console.log(location.state.mbti);
         if(location.state) {
-            return <span>{location.state.title}</span>;
+            return <h1>{location.state.mbti}</h1>;
         } else {
             return null;
         }

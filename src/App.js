@@ -9,7 +9,7 @@ function App() {
   return <HashRouter>
     <Route path="/" exact={true} component={Home} />
     <Route path="/question" component={Question} />
-    <Route path="/result/:id" component={Result} />
+    <Route path="/result/" component={Result} />
   </HashRouter>;
 }
 

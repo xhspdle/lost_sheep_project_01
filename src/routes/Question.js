@@ -1,16 +1,78 @@
 import React from "react";
+import { data } from './data/question.json';
 import "./Question.css";
 
-function Question(props) {
-    console.log(props)
-    return (
+class Question extends React.Component {
+    state = {
+      qId: 0,
+      q: "",
+      a: [
+        {
+          cate: "",
+          text: "",
+        }
+      ],
+      answer: []
+    };
+    conResult = (answer) => {
+        let result = ""
+        let e = 0, i = 0, n = 0, s = 0, f = 0, t = 0, j = 0, p = 0;
+        answer.forEach(({ cate }, index) => {
+            if(index<3) {
+                cate === 'E' ? e++ : i++;
+            }else if(index<6) {
+                cate === 'N' ? n++ : s++;
+            }else if(index<9) {
+                cate === 'F' ? f++ : t++;
+            }else if(index<12) {
+                cate === 'J' ? j++ : p++; 
+            }
+        });
+        result = e > i ? 'E' : 'I';
+        result += n > s ? 'N' : 'S';
+        result += f > t ? 'F' : 'T';
+        result += j > p ? 'J' : 'P';
+        console.log(result);
+        return result;
+    }
+    nextQuestion = (qId, cate) => {
+        const { history } = this.props;
+        let { answer } = this.state;
+        if(qId === 11) {
+            const mbti = this.conResult(answer);
+            history.push({
+                pathname: "/result",
+                state: { mbti : mbti }
+            });
+        }else{
+            this.setState({ 
+                qId: qId + 1 ,
+                answer: answer.concat({ cate })
+            });
+        }
+    }
+    render() {
+      const { qId } = this.state;
+      return (
         <div className="question__container">
-            <span>
-                호롤로롤로로로로로로로로로로로로
+            <span id="q">
+                {data[qId].q}
             </span>
-            <span>호롤로로로</span>
+            <button 
+                id="text1" 
+                onClick={() => this.nextQuestion(qId, data[qId].a[0].cate)}
+            >
+                {data[qId].a[0].text}
+            </button>
+            <button 
+                id="text2"
+                onClick={() => this.nextQuestion(qId, data[qId].a[1].cate)}
+            >
+                {data[qId].a[1].text}
+            </button>
         </div>
-    );
-}
+      );
+    }
+  }
 
 export default Question;
