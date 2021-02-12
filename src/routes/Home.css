@@ -1,3 +1,15 @@
+
+.App {
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+  justify-content: center;
+}
+
+.App-header {
+  display: inline-block;
+}
+
 .container {
   height: 100%;
   display: flex;
@@ -13,13 +25,63 @@
   font-weight: 300;
 }
 
-.movies {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(400px, 1fr));
-  grid-gap: 100px;
-  padding: 50px;
-  width: 80%;
-  padding-top: 70px;
+.App-body {
+  display: flex;
+  min-width: 400px;
+  max-width: 500px;
+  flex-direction: column;
+  align-items: center;
+  font-size: calc(10px + 2vmin);
+  /* position: fixed; */
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  min-height: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  flex-wrap: nowrap;
+}
+.main-img {
+  margin-top: 30px;
+  margin-bottom: 1ex;
+  max-width: 300px;
+}
+
+.main-test {
+  display: inline-block;
+  margin: 0;
+  width: 10ex;
+  height: 2.5ex;
+  line-height: 2.5ex;
+  border-radius: 2ex;
+  box-sizing: border-box;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+}
+
+.main-text {
+  margin: -1ex;
+  font-size: 60px;
+}
+
+.start-btn {
+  font-family: 'Nanum Pen Script', cursive;
+  font-size: 38px;
+  transition: all .5s ease-in-out;
+  border-radius: 35px;
+  box-shadow: 0 1px 7px rgba(0,0,0,0.25);
+  border: 0;
+  width: 70px;
+  height: 70px;
+  margin-top: 30px;
+  color: white;
+  background-color: black;
+}
+
+.start-btn:hover {
+  color: black;
+  background-color: white;
 }
 
 @media screen and (max-width: 1090px) {

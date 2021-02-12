@@ -58,18 +58,18 @@ class Question extends React.Component {
             <span id="q">
                 {data[qId].q}
             </span>
-            <button 
-                id="text1" 
-                onClick={() => this.nextQuestion(qId, data[qId].a[0].cate)}
-            >
-                {data[qId].a[0].text}
-            </button>
-            <button 
-                id="text2"
-                onClick={() => this.nextQuestion(qId, data[qId].a[1].cate)}
-            >
-                {data[qId].a[1].text}
-            </button>
+            {data[qId].a.map((v, i) => {
+                    return (
+                        <button 
+                            key={`key${i}`} 
+                            id={`text${i}`}
+                            onClick={() => this.nextQuestion(qId, v.cate)}            
+                        >
+                            {v.text}
+                        </button>
+                    )
+                })
+            }
         </div>
       );
     }
