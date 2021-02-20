@@ -1,21 +1,83 @@
 .question__container {
-    box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
-      0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
-    padding: 20px;
-    border-radius: 5px;
-    background-color: white;
-    margin: 0 auto;
-    margin-top: 100px;
-    width: 100%;
-    max-width: 400px;
-    font-weight: 300;
-  }
-  
-  .question__container span:first-child {
-    font-size: 20px;
-  }
-  
-  .question__container span:last-child {
-    display: block;
-    margin-top: 10px;
-  }
+  /* box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
+    0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+  border-radius: 5px;
+  background-color: white; */
+  padding: 50px;
+  padding-top: 35px;
+  margin: 0;
+  margin-top: 50px;
+  width: 100%;
+  min-width: 400px;
+  max-width: 500px;
+  font-weight: bold;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.progress-bar__container {
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.progress-bar {
+  border-radius: 60px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.bar {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.progress {
+  transition: width 1.5s;
+  background: tomato;
+  color: #fff;
+  padding: 5px;
+  width: 0;
+}
+
+.progress-bar span {
+  display: block;
+}
+
+.progress-bar {
+  left: 50%;
+  max-width: 90%;
+  position: absolute;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+.question__q {
+  position: relative;
+  height: 120px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  font-size: 25px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  line-height: 1.2;
+}
+
+.question__btn {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 14px;
+  transition: all .5s ease-in-out;
+  box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  width: 300px; 
+  height: 90px;
+  margin-bottom: 20px;
+  background-color: rgba(255, 72, 0, 0.25);
+  border-color: rgba(255, 72, 0, 0.5);
+  border-style: dotted;
+  color: darkslategrey;
+  outline: 0;
+}
+
+.question__btn:hover {
+  box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.7);
+  color: black;
+}

@@ -32,14 +32,16 @@ class Question extends React.Component {
         result += n > s ? 'N' : 'S';
         result += f > t ? 'F' : 'T';
         result += j > p ? 'J' : 'P';
-        console.log(result);
         return result;
     }
     nextQuestion = (qId, cate) => {
         const { history } = this.props;
-        let { answer } = this.state;
+        let { answer } = this.state;        
         if(qId === 11) {
             const mbti = this.conResult(answer);
+            if(mbti === undefined) {
+                history.push("/");
+            }
             history.push({
                 pathname: "/result",
                 state: { mbti : mbti }
@@ -55,7 +57,20 @@ class Question extends React.Component {
       const { qId } = this.state;
       return (
         <div className="question__container">
-            <span id="q">
+            <div className="progress-bar__container">
+                <div className="progress-bar">
+                    <span className="bar">
+                        <span 
+                            className="progress"
+                            style={{
+                                width: `${((qId+1)/12)*100}%`
+                            }}   
+                        >
+                        </span>
+                    </span>
+                </div>
+            </div>
+            <span className="question__q" id="q">
                 {data[qId].q}
             </span>
             {data[qId].a.map((v, i) => {
@@ -63,6 +78,7 @@ class Question extends React.Component {
                         <button 
                             key={`key${i}`} 
                             id={`text${i}`}
+                            className="question__btn"
                             onClick={() => this.nextQuestion(qId, v.cate)}            
                         >
                             {v.text}
