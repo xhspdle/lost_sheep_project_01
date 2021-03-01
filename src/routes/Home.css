@@ -16,9 +16,9 @@
 }
 
 .main-img {
-  margin-top: 30px;
-  margin-bottom: 1ex;
-  max-width: 300px;
+  z-index: -10;
+  width: 400px;
+  position: absolute;
 }
 
 .main-test {
@@ -33,6 +33,7 @@
   border-width: 1px;
   border-color: black;
   font-size: 25px;
+  margin-top: 360px;
 }
 
 .main-text {

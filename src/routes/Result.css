@@ -15,8 +15,81 @@
   position: absolute;
   transform: translateX(-50%);
   width: 410px;
+  padding: 10px;
+}
+
+.result ul {
+  padding-inline-end: 30px;
+}
+
+.result_div li {
+  text-align: left;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.result_div p,li {
+  font-size: 16px;
+}
+
+.result_div img {
+  width: 80%;
+  transform: translateX(-8%);
 }
 
 .result_div p {
-  font-size: 16px;
+  margin-bottom: 0px;
+  color: darkslategrey;
+}
+
+.result_desc {
+  text-align: left;
+  color: darkolivegreen !important;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 0px;
+  line-height: 1.6;
+}
+
+.result_div h1 {
+  line-height: 1;
+  margin: 5px;
+  color: tomato;
+}
+
+.bible_title {
+  margin-top: 50px;
+  padding-left: 80px;
+  padding-right: 80px;
+  color: darkolivegreen !important;
+  line-height: 1.4;
+}
+
+.bible_content {
+  margin-top: 5px;
+  font-weight: 800;
+  padding-left: 30px;
+  padding-right: 30px;
+  color: black !important;
+}
+
+.restart_btn {
+  font-family: 'Nanum Pen Script', cursive;
+  font-size: 30px;
+  transition: all .5s ease-in-out;
+  border-radius: 35px;
+  box-shadow: 0 1px 7px rgba(0,0,0,0.25);
+  border: 0;
+  width: 180px;
+  height: 50px;
+  margin-top: 30px;
+  color: white;
+  background-color: black;
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+
+.restart_btn:hover {
+  color: black;
+  background-color: white;
 }

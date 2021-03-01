@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import "./Result.css";
 
 class Result extends React.Component {
@@ -20,16 +21,13 @@ class Result extends React.Component {
         if(location.state === undefined) {
             history.push("/");
         }else{
-            this.getResults();
+            this.getResults();            
         }
     }
     render() {
         const { location } = this.props;
         const { isLoading, data } = this.state;
         if(location.state) {
-            // if(!isLoading) {
-            //     document.getElementsByClassName("App-body")[0].setAttribute("style", "")
-            // }
             return (
                 <div className="result__container">
                     {isLoading ? (
@@ -42,16 +40,26 @@ class Result extends React.Component {
                                  .map((v,i) => {
                                     return (
                                         <div key={i} className="result_div">
-                                            <h3>MBTI: {v.mbti}</h3>
+                                            {/* <h3>MBTI: {v.mbti}</h3> */}
                                             <p>{v.nick}</p>
                                             <h1>{v.name}</h1>
-                                            <p>{v.desc}</p>
-                                            <p>{v.adv1}</p>
-                                            <p>{v.adv2}</p>
-                                            <p>{v.dis1}</p>
-                                            <p>{v.avs1}</p>
-                                            <p>{v.bible_title}</p>
-                                            <p>{v.bible_content}</p>
+                                            <img src={`${v.img}`} alt={`pic of ${v.name}`}/>
+                                            <p className="result_desc">{v.desc}</p>
+                                            <ul>
+                                                <li>{v.adv1}</li>
+                                                <li>{v.adv2}</li>
+                                                <li>{v.dis1}</li>
+                                                <li>{v.avs1}</li>
+                                            </ul>
+                                            <p className="bible_title">{v.bible_title}</p>
+                                            {v.bible_content ? 
+                                            <p className="bible_content">"{v.bible_content}"</p>
+                                            :
+                                            <p>성경말씀 채워주세용~_~</p>
+                                            }
+                                            <Link to="/">
+                                                <button className="restart_btn">테스트 다시하기</button>
+                                            </Link>
                                         </div>
                                     );
                                  })
