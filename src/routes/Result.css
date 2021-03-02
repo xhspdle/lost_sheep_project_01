@@ -73,6 +73,21 @@
   color: black !important;
 }
 
+#link-btn-text {
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+#link-btn {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.link-btn-box {
+  margin-top: 100px;
+  margin-bottom: 40px;
+}
+
 .restart_btn {
   font-family: 'Nanum Pen Script', cursive;
   font-size: 30px;
@@ -87,6 +102,7 @@
   background-color: black;
   margin-top: 50px;
   margin-bottom: 100px;
+  outline: none;
 }
 
 .restart_btn:hover {

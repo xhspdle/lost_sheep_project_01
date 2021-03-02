@@ -1,6 +1,11 @@
 import React from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { CopyToClipboard } from "react-copy-to-clipboard";
+import { confirmAlert } from "react-confirm-alert";
+import 'react-confirm-alert/src/react-confirm-alert.css';
+import KakaoShareButton from '../components/KakaoShareButton';
+import { ReactComponent as LinkIcon } from '../components/link-black.svg';
 import "./Result.css";
 
 class Result extends React.Component {
@@ -8,17 +13,23 @@ class Result extends React.Component {
         isLoading: true,
         data: []
     }
+    submit = () => {
+        confirmAlert({
+            title: '성경인물TEST',
+            message: '링크가 복사되었습니다'
+        });
+    }
     getResults = async () => {
         const { data: {
             data
         } } = await axios.get(
-            "https://script.google.com/macros/s/AKfycbz1_cj4zp1iQ7V8oDqLr6Pi23_-0kEdawsApkSgP5LVn6fia9Gom-Sj/exec?sheetName=db_result"
+            process.env.REACT_APP_FETCH_URL
         );
         this.setState({ data, isLoading: false });
     }
     componentDidMount() {
         const { location, history } = this.props;
-        if(location.state === undefined) {
+        if(location.state === undefined && location.search === "") {
             history.push("/");
         }else{
             this.getResults();            
@@ -27,7 +38,8 @@ class Result extends React.Component {
     render() {
         const { location } = this.props;
         const { isLoading, data } = this.state;
-        if(location.state) {
+        if(location.state || location.search !== "") {
+            let getMbti = (location.search === "") ? location.state.mbti : location.search.replace('?', '');
             return (
                 <div className="result__container">
                     {isLoading ? (
@@ -36,7 +48,7 @@ class Result extends React.Component {
                         </div>
                     ) : (
                         <div className="result">
-                            {data.filter(d => d.mbti === location.state.mbti)
+                            {data.filter(d => d.mbti === getMbti)
                                  .map((v,i) => {
                                     return (
                                         <div key={i} className="result_div">
@@ -57,6 +69,25 @@ class Result extends React.Component {
                                             :
                                             <p>성경말씀 채워주세용~_~</p>
                                             }
+                                            <div className="link-btn-box">
+                                                <p id="link-btn-text">
+                                                    결과 공유하기
+                                                </p>
+                                                <KakaoShareButton 
+                                                    img={v.img} 
+                                                    MBTI={v.mbti}
+                                                    name={v.name}
+                                                    nick={v.nick}
+                                                />
+                                                <CopyToClipboard
+                                                    text={window.location.href + '?' + v.mbti}
+                                                    onCopy={this.submit}
+                                                >
+                                                    <div id="link-btn">
+                                                        <LinkIcon width="46" height="46"/>
+                                                    </div>
+                                                </CopyToClipboard>
+                                            </div>
                                             <Link to="/">
                                                 <button className="restart_btn">테스트 다시하기</button>
                                             </Link>
