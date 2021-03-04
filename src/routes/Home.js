@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Home.css";
-import imgSheep from "./main.png";
+import imgSheep from "./main2.png";
 
 
 function Home() {

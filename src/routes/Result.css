@@ -12,8 +12,7 @@
 
 .result {
   background-color: #eff3f7;
-  position: absolute;
-  transform: translateX(-50%);
+  position: relative;
   width: 410px;
   padding: 10px;
 }

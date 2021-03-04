@@ -9,7 +9,8 @@
   top: 0;
   bottom: 0;
   width: 100%;
-  min-height: 720px;
+  /* min-height: 720px; */
+  min-height: 620px;
   margin-left: auto;
   margin-right: auto;
   flex-wrap: nowrap;
@@ -33,7 +34,7 @@
   border-width: 1px;
   border-color: black;
   font-size: 25px;
-  margin-top: 360px;
+  margin-top: 260px;
 }
 
 .main-text {
@@ -43,17 +44,18 @@
 
 .start-btn {
   font-family: 'Nanum Pen Script', cursive;
-  font-size: 38px;
   transition: all .5s ease-in-out;
-  border-radius: 35px;
   box-shadow: 0 1px 7px rgba(0,0,0,0.25);
   border: 0;
   width: 70px;
   height: 70px;
-  margin-top: 30px;
+  border-radius: 35px;
+  margin-top: 30px; 
+  font-size: 38px;
   color: white;
   background-color: black;
   outline: none;
+  cursor: pointer;
 }
 
 .start-btn:hover {
