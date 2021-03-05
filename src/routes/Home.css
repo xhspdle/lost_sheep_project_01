@@ -33,13 +33,19 @@
   border-style: solid;
   border-width: 1px;
   border-color: black;
-  font-size: 25px;
-  margin-top: 260px;
+  /* font-size: 25px;
+  margin-top: 260px; */
+  font-size: 23px;
+  margin-top: 300px;
+  margin-bottom: 5px; /* 추가함 */
 }
 
 .main-text {
-  margin: -1ex;
-  font-size: 60px;
+  /* margin: -1ex;
+  font-size: 60px; */
+  margin: -0.9ex;
+  font-size: 50px;
+  line-height: 1.7; /* 추가함 */
 }
 
 .start-btn {
@@ -51,7 +57,8 @@
   height: 70px;
   border-radius: 35px;
   margin-top: 30px; 
-  font-size: 38px;
+  /* font-size: 38px; */
+  font-size: 32px;
   color: white;
   background-color: black;
   outline: none;
